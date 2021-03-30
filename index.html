@@ -8,7 +8,72 @@
 </head>
 <body>
     
-       <h1>This is first project</h1>
+       <script>
+
+            function game(){
+
+                let userscore = 0;
+                let computerscore = 0;
+
+                function computerPlay(){
+                let moves = ['rock', 'paper', 'scissor'];
+                return moves[Math.floor(Math.random() * moves.length)];
+                }
+
+
+
+                for (let i = 0; i < 5; i++){
+                    const playerSelection = prompt('Put your move: ').toLowerCase();
+                    const computerSelection = computerPlay();
+
+                    function playRound(playerSelection, computerSelection){
+                        if (playerSelection === 'rock' && computerSelection === 'rock') {
+                            return ('it is a tie'); 
+                        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+                            computerscore++;
+                            return ('Computer Wins! paper beats rock');
+                        } else if (playerSelection === 'rock' && computerSelection === 'scissor'){
+                            userscore++;
+                            return ('You win! Rock beats scissor');
+                        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+                            userscore++;
+                            return ('You win! paper beats rock');
+                        } else if(playerSelection === 'paper' && computerSelection === 'paper'){
+                            return ('It is a tie');
+                         } else if (playerSelection === 'paper' && computerSelection === 'scissor'){
+                            computerscore++;
+                            return ('Computer wins! scissor cuts paper');
+                         } else if (playerSelection === 'scissor' && computerSelection === 'rock') {
+                            computerscore++;
+                            return ('Computer wins! rock smashes scissor');
+                        } else if (playerSelection === 'scissor' && computerSelection === 'paper') {
+                            userscore++;
+                            return ('You win! scissor cuts paper');
+                        } else if (playerSelection === 'scissor' && computerSelection === 'scissor') {
+                            return ('It is a tie');
+                        } else {
+                            return ('Please choose the right move');
+                        }
+                    }
+                    console.log(playRound(playerSelection, computerSelection));    
+                }
+                function winner(computerscore, userscore){
+                    if (userscore > computerscore) {
+                        return ('You won the game!!');
+                    } else if (computerscore > userscore) {
+                        return ('Computer Won the game!!');
+                    } else {
+                        return ('The game is a tie!! Try Again');
+                    }
+                }
+                console.log(winner(computerscore, userscore));
+
+            }
+            game();
+            
+
+
+       </script>
 
 
 </body>
