@@ -1,0 +1,40 @@
+
+.container{
+    margin: 5rem auto;
+    text-align: center;
+}
+
+h1{
+    word-spacing: 2rem;
+    font-weight: bold;
+}
+.buttons{
+    margin-top: 5rem;
+}
+button{
+    font-weight: bolder;
+    font-size: 5rem;
+    padding: 2rem;
+    border: 2px solid black;
+    margin-left: 3rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.score{
+    margin-top: 5rem;
+}
+.Pscr{
+    display: inline;
+
+}
+.Cscr{
+    display: inline;
+    margin-left: 3rem;
+}
+
+.answer{
+    margin-top: 3rem;
+}
